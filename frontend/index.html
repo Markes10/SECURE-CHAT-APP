@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Chat App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🔐 Secure Chat</h1>
+
+  <div id="auth">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="chat" style="display:none;">
+    <div class="controls">
+      <textarea id="message" placeholder="Type your message..."></textarea>
+      <button id="emoji-btn">😊</button>
+      <button onclick="sendMessage()">Send</button>
+      <button onclick="loadMessages()">Refresh</button>
+      <button onclick="recordVoice()">🎤 Voice</button>
+    </div>
+    <div id="messages"></div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/index.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

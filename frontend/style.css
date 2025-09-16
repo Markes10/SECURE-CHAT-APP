@@ -1,0 +1,145 @@
+/* 🌐 Global Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+input, textarea, button {
+  font-size: 16px;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+button {
+  background-color: #0078D4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005a9e;
+}
+
+/* 🧩 Layout Containers */
+#auth, #chat {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+#emoji-btn {
+  font-size: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#messages {
+  margin-top: 20px;
+  background: #fafafa;
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 4px;
+}
+
+/* 💬 Message Styling */
+#messages div {
+  margin-bottom: 10px;
+  padding: 8px;
+  background: #e8f0fe;
+  border-radius: 4px;
+}
+
+/* 🛡 Admin Dashboard */
+.admin-section {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.admin-item {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-left: 4px solid #0078D4;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-item button {
+  background-color: #d83b01;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.admin-item button:hover {
+  background-color: #a4262c;
+}
+
+/* 🎧 Voice Player */
+audio {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button, textarea, input {
+    width: 100%;
+  }
+
+  #emoji-btn {
+    align-self: flex-start;
+  }
+
+  .admin-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-item button {
+    margin-top: 8px;
+  }
+}
