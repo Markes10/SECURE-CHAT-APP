@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: securechat-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: secure_chat
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  node:
+    build: .
+    container_name: securechat-node
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    environment:
+      PORT: 3000
+      NODE_ENV: development
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASS: root
+      DB_NAME: secure_chat
+      JWT_SECRET: yourSecretKey
+      GCS_PROJECT_ID: your-gcp-project-id
+      GCS_BUCKET_NAME: your-bucket-name
+      GCS_KEYFILE: ./path-to-service-account.json
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ["node", "server.js"]
+
+volumes:
+  mysql_data:
